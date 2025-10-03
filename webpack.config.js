@@ -7,20 +7,21 @@ module.exports = {
         path : path.resolve(__dirname,'projetoAgenda','public','assets','js'),
         filename : 'bundle.js',
     },
-    module : {
-        rules : [
-            {
-                exclude : /node_modules/,
-                test : /\.js$/,
-                use : {
-                    loader : 'babel-loader',
-                    options : {
-                        presets : ['@babel/preset-env']
-                    }
-                }
-            }
-        ]
-    },
-    devtool : 'source-map'
+   module: {
+    rules: [{
+      exclude: /node_modules/,
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/env']
+        }
+      }
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }]
+  },
+devtool: 'source-map'
 
 }
