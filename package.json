@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "routers.js",
   "scripts": {
-    "server": "nodemon server.js --ignore frontend --ignore public",
+    "server": "nodemon ./settings/server.js --ignore frontend --ignore public",
     "dev": "webpack -w"
   },
   "keywords": [],
