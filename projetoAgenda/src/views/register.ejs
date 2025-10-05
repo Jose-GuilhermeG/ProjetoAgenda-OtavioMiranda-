@@ -1,0 +1,47 @@
+<%- include ('includes/head') %>
+<%- include ('includes/nav') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 my-5">
+                <h1 class="text-center ">
+                    Sua conta
+                </h1>
+                <p class="text-center lead">
+                    cadastre-se
+                </p>
+                <%- include ('includes/messages') %>
+                <div class="row">
+                    <div class="col-lg projectTab " id="register">
+                        <h4>
+                            Cadastro
+                        </h4>
+                        <form action="/account/register/" method="post">
+                            <input type="hidden" name="_csrf" value="<%=csrf_token%>">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nome</label>
+                                <input type="text" name="username" class="form-control" id="username">
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="registeremail" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" id="registeremail">
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerpassword" class="form-label">Senha</label>
+                                <input type="password"name='password' class="form-control" id="registerpassword">
+                            </div>
+                            <a href="/account/login" class="d-block mb-3">
+                                Ja tem conta? <span> Entrar </span>
+                            </a>
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+<%- include ('includes/footer') %>

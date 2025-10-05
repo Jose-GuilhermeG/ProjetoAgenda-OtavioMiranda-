@@ -2,5 +2,4 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import '../css/style.css';
-
-console.log('Olá mundo 3');
+import 'bootstrap/dist/css/bootstrap.min.css'

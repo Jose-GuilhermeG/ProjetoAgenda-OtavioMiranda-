@@ -1,0 +1,40 @@
+<%- include ('includes/head') %>
+<%- include ('includes/nav') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 my-5">
+                <h1 class="text-center ">
+                    Sua conta
+                </h1>
+                <p class="text-center lead">
+                    Entre na sua conta
+                </p>
+                    <div class="col-lg projectTab" id="login">
+                        <h4>
+                            Entrar
+                        </h4>
+                        <form action="/account/login/" method="post">
+                            <input type="hidden" name="_csrf" value="<%=csrf_token%>">
+                            <div class="mb-3">
+                                <label for="loginemial" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" id="loginemial" aria-describedby="emailHelp">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginpassword" class="form-label">Senha</label>
+                                <input type="password" name="password" class="form-control" id="loginpassword">
+                            </div>
+                            <a href="/account/register" class="d-block mb-3">
+                                Não tem conta? Cadastrar
+                            </a>
+                            <button type="submit" class="btn btn-primary">Logar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+<%- include ('includes/footer') %>

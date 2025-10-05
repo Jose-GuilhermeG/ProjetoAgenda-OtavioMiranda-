@@ -1,0 +1,38 @@
+<%if(typeof(message) != undefined ){%>
+        <aside class="block fixed top-[15vh] left-[10%] w-[80%] h-fit">
+            <% if (message.info){%>
+                <% message.info.forEach(element=>{%>
+                     <div class="row">
+                        <div class="col">
+                            <div class="alert alert-danger">
+                                <%=element%>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+            <%}%>
+            <% if (message.error){%>
+                <% message.error.forEach(element=>{%>
+                      <div class="row">
+                        <div class="col">
+                            <div class="alert alert-danger">
+                                <%=element%>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+            <%}%>
+            <% if (message.success){%>
+                <% message.success.forEach(element=>{%>
+                      <div class="row">
+                        <div class="col">
+                            <div class="alert alert-success">
+                                <%=element%>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+            <%}%>
+        </aside>
+<%}%>
+

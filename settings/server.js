@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const routes = require("./router")
 const configs = require("./configs");
+const {ProjectMiddlewares , setMiddlewares} = require("./middlewaresControl")
+const {err404} = require("../projetoAgenda/src/middlewares/errorsMiddleware")
 const {mongooseConnect , dbEvents } = require("./db");
 const session = require("express-session");
 const mongoStore = require("connect-mongo")
@@ -22,7 +24,9 @@ app.use(session(configs.sessionOptions))
 app.use(flash())
 app.use(express.json())
 app.use(csrf())
+setMiddlewares(app,ProjectMiddlewares)
 app.use(routes)
+app.use(err404)
 
 app.set('views' , configs.viewPath)
 app.set('view engine' , configs.viewEngine)
